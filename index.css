@@ -1,9 +1,8 @@
+ *{
+	box-sizing: border-box;
+ }
+
  
-
-.main-wrapper {
-	margin-top: 20px;
-}
-
 .page-title {
 	text-align: center;
 }
