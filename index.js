@@ -6,7 +6,7 @@ submitForm.addEventListener("click", function(){
   validate(true);
 });
 
-const resetFn = () => {
+const resetFunction = () => {
   document.querySelector("#first-name").value = "";
   document.querySelector("#last-name").value = "";
   document.querySelector("#email").value = "";
@@ -20,7 +20,7 @@ const resetFn = () => {
   document.querySelector("#email-Valid").style.display = "none";
   document.querySelector("#password-Valid").style.display = "none";
   document.querySelector("#confirm-password-Valid").style.display = "none";
-  document.querySelector("#t-and-c-Valid").style.display = "none";
+  document.querySelector("#t-and-c-inValid").style.display = "none";
   
   submitted = false;
 }
@@ -97,13 +97,13 @@ function validate(isSubmitted) {
   if(tnC){
     document.querySelector("#t-and-c-inValid").style.display = "none";
   } else {
-    document.querySelector("#t-and-c-inValid").style.display = "block";
+    document.querySelector("#t-and-c-inValid").style.display = "block" ;
     error = true;
   }
   
   if(error === false && isSubmitted === true){
     alert('Your details have been saved successfully!');
-    resetFn();
+    resetFunction();
   } 
 } 
 }
