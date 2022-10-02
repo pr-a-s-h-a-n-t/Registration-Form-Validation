@@ -1,0 +1,28 @@
+ 
+
+.main-wrapper {
+	margin-top: 20px;
+}
+
+.page-title {
+	text-align: center;
+}
+
+.registration-form {
+	width: 800px;
+  margin: auto;
+}
+
+ 
+
+.form-heading{
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	color: white;
+}
+ 
+.main-container{
+	background-color: #eee;
+	padding-bottom: 1rem;
+}
