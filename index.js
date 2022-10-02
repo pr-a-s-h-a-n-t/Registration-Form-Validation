@@ -1,5 +1,5 @@
 
-"use strict";
+ 
 
 let submitForm = document.querySelector("#submitForm");
 submitForm.addEventListener("click", function(){
@@ -40,6 +40,9 @@ function validate(isSubmitted) {
   
   let error = false;
   if(submitted){
+
+   // first name validation
+
   if (firstName.length >= 3) {
     document.getElementById("first-name-Valid").style.display = "block";
     document.querySelector("#first-name-invalid").style.display = "none";
@@ -48,6 +51,9 @@ function validate(isSubmitted) {
     document.getElementById("first-name-Valid").style.display = "none";
     error = true;
   }
+
+  // last name validation
+
   if (lastName.length >= 3) {
     document.querySelector("#last-name-Valid").style.display = "block";
     document.querySelector("#last-name-invalid").style.display = "none";
@@ -56,6 +62,9 @@ function validate(isSubmitted) {
     document.querySelector("#last-name-Valid").style.display = "none";
     error = true;
   }
+
+  // email validation
+
   if (
     email.includes("@") &&
     email.includes(".") &&
@@ -69,12 +78,13 @@ function validate(isSubmitted) {
     document.querySelector("#email-Valid").style.display = "none";
     error = true;
   }
+
+  // password validation
+
   let passwordPassed = false;
   
     if (
-      password.length >= 8 && password.match(/[0-9]/i) && password.match(/[^A-Za-z0-9-'']/i) && password.charAt(0) != '@')
-      
-      {
+      password.length >= 8 && password.match(/[0-9]/i) && password.match(/[^A-Za-z0-9-'']/i) && password.charAt(0) != '@'){
       document.querySelector("#password-Valid").style.display = "block";
       document.querySelector("#password-inValid").style.display = "none";
       passwordPassed = true;
@@ -85,6 +95,8 @@ function validate(isSubmitted) {
       passwordPassed = false;
     }
 
+    // confirm password validation
+
     if (confirmPassword === password && passwordPassed) {
       document.querySelector("#confirm-password-Valid").style.display = "block";
       document.querySelector("#confirm-password-inValid").style.display = "none";
@@ -94,12 +106,15 @@ function validate(isSubmitted) {
       error = true;
     }
   
-  if(tnC){
-    document.querySelector("#t-and-c-inValid").style.display = "none";
-  } else {
-    document.querySelector("#t-and-c-inValid").style.display = "block" ;
-    error = true;
-  }
+    // terms & conditions
+    if(tnC){
+      document.querySelector("#t-and-c-inValid").style.display = "none";
+    } else {
+      document.querySelector("#t-and-c-inValid").style.display = "block" ;
+      error = true;
+    }
+
+    // popup message
   
   if(error === false && isSubmitted === true){
     alert('Your details have been saved successfully!');
